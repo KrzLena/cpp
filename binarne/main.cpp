@@ -6,7 +6,7 @@ void binarne(int tab[], int n,int l)
 {
     int m = n/2;
     int p = 0;
-    while (tab[m] != l)
+    while (((m+p)/2) != l)
     {
 
         if (tab[m]==l)
@@ -23,7 +23,16 @@ void binarne(int tab[], int n,int l)
             m = (p+n)/2;
         }
     }
-    cout<<"szukana liczba: "<<l<<"\n znaleziona liczba: "<<tab[m]<<endl;
+
+    if(tab[m] != l)
+    {
+        cout<<"nie znaleziono liczby"<<endl;
+    }
+    else
+    {
+        cout<<"szukana liczba: "<<l<<"\n znaleziona liczba: "<<tab[m]<<endl;
+    }
+
 }
 
 
@@ -31,7 +40,7 @@ void binv2(int tab[], int n,int num)
 {
     int l = 0;
     int p = n-1;
-    int mid = n/2;
+    int mid = (n-1)/2;
     while(p<l)
     {
         if(tab[mid] == num)
@@ -54,5 +63,5 @@ void binv2(int tab[], int n,int num)
 int main()
 {
     int t[10] = {1,2,4,6,7,7,9,10,11,12};
-    binarne(t, 10, 2);
+    binarne(t, 10, 3);
 }
